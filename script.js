@@ -7,6 +7,7 @@ const currentLength = document.getElementById("slider-value");
 const passwordLabel = document.getElementById("password-label");
 const alert = document.getElementById("error-alert");
 const strengthBar = document.getElementById("progress-bar");
+const copyButton = document.getElementById("copy-button");
 const commonWords = [
   "password",
   "admin",
@@ -47,11 +48,11 @@ function genaratePassword(length, options) {
 }
 
 function calculateStrength(password, options) {
-    let countStrength = 0;
-    if(password == "") {
-        countStrength = 0;
-        return countStrength;   
-    }
+  let countStrength = 0;
+  if (password == "") {
+    countStrength = 0;
+    return countStrength;
+  }
   //password length
   if (password.length < 6) countStrength += 3;
   if (password.length >= 6 && password.length < 9) countStrength += 5;
@@ -123,5 +124,24 @@ document
     passwordLabel.value = password;
     let strength = calculateStrength(password, options);
     strengthBar.style.width = strength + "%";
+    if (strength > 80) 
+      strengthBar.style.backgroundColor = "green";
+    else if (strength <= 80 && strength >= 40)
+      strengthBar.style.backgroundColor = "yellow";
+    else 
+      strengthBar.style.backgroundColor = "red";
   });
-  
+
+copyButton.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(passwordLabel.value);
+    copyButton.innerText = "Copied";
+    
+    setTimeout(() => {
+      copyButton.innerText = "Copy";
+    }, 1500);
+    
+  } catch (err) {
+    console.error(err);
+  }
+});

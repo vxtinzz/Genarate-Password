@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
+    <div class="theme-selector">
+      <label><input type="radio" name="theme" value="netflix" /> NETFLIX</label>
+
+      <label><input type="radio" name="theme" value="discord" /> DISCORD</label>
+
+      <label><input type="radio" name="theme" value="spotify" /> SPOTIFY</label>
+    </div>
     <div class="titles">
       <h1>Password Genarate</h1>
       <h3>
@@ -15,10 +22,10 @@
     </div>
     <input type="text" class="password-label" id="password-label" />
     <div class="progress">
-        <div class="progress-bar" id="progress-bar"></div>
+      <div class="progress-bar" id="progress-bar"></div>
     </div>
-    <button>copy</button>
-    <div class="settings">
+    <button id="copy-button">copy</button>
+    <div class="password-settings">
       <input
         type="range"
         value="4"
