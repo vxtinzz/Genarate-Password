@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Password Genarate</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="titles">
+      <h1>Password Genarate</h1>
+      <h3>
+        Online password generator tool to instantly create a secure password
+      </h3>
+    </div>
+    <input type="text" class="password-label" id="password-label" />
+    <div class="progress">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <button>copy</button>
+    <div class="settings">
+      <input
+        type="range"
+        value="4"
+        min="4"
+        max="32"
+        class="slider-range"
+        id="password-length"
+      />
+      <span id="slider-value">4</span>
+      <input
+        type="checkbox"
+        class="checkbox-preferences"
+        id="checkbox-1"
+        name="UpperCase"
+        value="UpperCase"
+      />
+      <label for="UpperCase">UpperCase Letters</label>
+      <input
+        type="checkbox"
+        class="checkbox-preferences"
+        id="checkbox-2"
+        name="LowerCase"
+        value="LowerCase"
+      />
+      <label for="LowerCase">LowerCase Letters</label>
+      <input
+        type="checkbox"
+        class="checkbox-preferences"
+        id="checkbox-3"
+        name="Numbers"
+        value="Numbers"
+      />
+      <label for="Numbers">Numbers</label>
+      <input
+        type="checkbox"
+        class="checkbox-preferences"
+        id="checkbox-4"
+        name="Symbols"
+        value="Symbols"
+      />
+      <label for="Symbols">Symbols</label>
+      <p id="error-alert"></p>
+      <button id="genarate-button">GENERATE</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
