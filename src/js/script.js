@@ -145,3 +145,20 @@ copyButton.addEventListener("click", async () => {
     console.error(err);
   }
 });
+
+const radios = document.querySelectorAll('input[name="theme"]');
+
+radios.forEach(radio => {
+  radio.addEventListener('change', () => {
+    const theme = radio.value;
+    document.documentElement.setAttribute('data-theme', theme);
+
+    localStorage.setItem('theme', theme);
+  });
+});
+
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+}
