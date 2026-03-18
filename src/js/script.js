@@ -21,7 +21,7 @@ sliderRange.oninput = function () {
   currentLength.innerHTML = this.value;
 };
 
-function genaratePassword(length, options) {
+function generatePassword(length, options) {
   let passwordStr = "";
   if (
     options.uppercase == false &&
@@ -29,7 +29,7 @@ function genaratePassword(length, options) {
     options.numbers == false &&
     options.symbols == false
   ) {
-    alert.textContent = "Select at least one checkbox option.";
+    alert.textContent = "*Select at least one checkbox option.";
   } else {
     alert.textContent = "";
     let pool = "";
@@ -111,7 +111,7 @@ function calculateStrength(password, options) {
 }
 
 document
-  .getElementById("genarate-button")
+  .getElementById("generate-button")
   .addEventListener("click", function () {
     const options = {
       uppercase: document.getElementById("checkbox-1").checked,
@@ -120,7 +120,7 @@ document
       symbols: document.getElementById("checkbox-4").checked,
     };
 
-    let password = genaratePassword(currentLength.innerHTML, options);
+    let password = generatePassword(currentLength.innerHTML, options);
     passwordLabel.value = password;
     let strength = calculateStrength(password, options);
     strengthBar.style.width = strength + "%";
@@ -135,10 +135,10 @@ document
 copyButton.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(passwordLabel.value);
-    copyButton.innerText = "Copied";
+    copyButton.innerText = "copied";
     
     setTimeout(() => {
-      copyButton.innerText = "Copy";
+      copyButton.innerText = "copy";
     }, 1500);
     
   } catch (err) {
@@ -156,9 +156,3 @@ radios.forEach(radio => {
     localStorage.setItem('theme', theme);
   });
 });
-
-
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  document.documentElement.setAttribute('data-theme', savedTheme);
-}

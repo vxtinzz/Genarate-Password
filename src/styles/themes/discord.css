@@ -1,5 +1,12 @@
 :root[data-theme="discord"] {
-  --bg: #36393f;
-  --primary: #5865f2;
-  --text: #dcddde;
+  --background-color:#202024;
+  --card-fill:#1C1C20;
+  --card-stroke:#343439;
+  --primary-color:#5865F2;
+  --second-color:#6975F3;
+  --alert-asterisk-color:#D46F6D;
+  --main-text:#FFFFFF;
+  --text:#7B7C82;
+  --button-text:#FFFFFF;
+  --radio-text:#FFFFFF;
 }

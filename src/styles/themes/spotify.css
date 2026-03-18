@@ -1,5 +1,11 @@
 :root[data-theme="spotify"] {
-  --bg: #121212;
-  --primary: #1db954;
-  --text: #ffffff;
+  --background-color:#000000;
+  --card-fill:#353535;
+  --card-stroke:none;
+  --primary-color:#1ED760;
+  --alert-asterisk-color:#FF0000;
+  --main-text:#FFFFFF;
+  --text:#8BC8A1;
+  --button-text:#000000;
+  --radio-text:#8BC8A1;
 }
