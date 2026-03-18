@@ -19,6 +19,10 @@ body {
   width: 96%;
 }
 
+.main-content{
+  align-self: center;
+}
+
 button {
   background: var(--primary-color);
   color:var(--button-text);
@@ -58,10 +62,11 @@ button, .password-settings, .titles, .theme-selector{
 #copy-button {
   position: absolute;
   right: 8px;
-  top: 50%;
+  top: 34%;
   transform: translateY(-50%);
   border-radius: 3px;
   line-height: 1.3;
+  padding: 4px 11px;
 }
 
 .password-settings{
@@ -79,6 +84,7 @@ align-items: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 25px;
 }
 
 #slider-value{
@@ -103,9 +109,13 @@ align-items: center;
 .progress{
     height: 8px;
     background-color: var(--card-fill);
+    border: 1px var(--card-stroke) solid;
     position: relative;
-    width:30dvw;
+    width:100%;
     border-radius: 5px;
+    padding-right: 24px;
+    margin-top: 8px;
+    margin-bottom: 20px;
 }
 
 .progress .progress-bar{
@@ -131,14 +141,17 @@ align-items: center;
 .checkbox-preferences {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap: 8px;
+  justify-content: space-between;
+  row-gap: 20px;
+  column-gap: 80px;
 }
 
 .checkbox-preferences label {
-  line-gap-override: 10px;
+  display: flex;
   align-items: center;
   gap: 15px;
   font-weight:lighter;
+  font-size: 20px;
 }
 
 #generate-button {
