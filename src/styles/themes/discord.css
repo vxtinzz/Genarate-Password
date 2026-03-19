@@ -9,4 +9,11 @@
   --text:#7B7C82;
   --button-text:#FFFFFF;
   --radio-text:#FFFFFF;
+  --error-color:#E50914;
+  --checkbox-width:48px;
+  --checkbox-height:24px;
+  --hover-button-color:#3E4BAA;
+  --focus-color:#3E4BAA;
+  --icon: url("../assets/toggle-button-unchecked.svg");
+  --icon-checked: url("../assets/toggle-button.svg");
 }

@@ -35,6 +35,11 @@ button, .password-settings, .titles, .theme-selector{
   transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
+button:hover{
+  background-color: var(--hover-button-color);
+  transition: background 0.15s ease;
+}
+
 .titles h1{
  color: var(--main-text);
  text-align: center;
@@ -77,6 +82,15 @@ button, .password-settings, .titles, .theme-selector{
 position: relative;
 width: 1046px;
 align-items: center;
+}
+
+.input-group input{
+border: 1px solid #ccc;
+}
+
+.input-group input:focus{
+   border: 2px solid var(--focus-color);
+   outline: none;
 }
 
 .slider-group{
@@ -154,6 +168,24 @@ align-items: center;
   font-size: 20px;
 }
 
+.checkbox-preferences input {
+  appearance: none; 
+  width: var(--checkbox-width);
+  height: var(--checkbox-height);
+  cursor: pointer;
+
+  background-image: var(--icon);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.checkbox-preferences input:checked {
+  background-image: var(--icon-checked);
+  transform: scale(1.1);
+}
+
 #generate-button {
   padding: 12px;
   width: 227px;
@@ -162,14 +194,6 @@ align-items: center;
   font-size: 20px;
 }
 
-#error-alert-asterisk {
-  color: var(--alert-asterisk-color);
-}
-
-#error-alert{
-  color: var(--alert-color);
-}
-
-p:first-letter {
+.asterisk {
   color: var(--alert-asterisk-color);
 }

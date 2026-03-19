@@ -29,9 +29,11 @@ function generatePassword(length, options) {
     options.numbers == false &&
     options.symbols == false
   ) {
-    alert.textContent = "*Select at least one checkbox option.";
+    alert.innerHTML = '<span class="asterisk">*</span>Select at least one checkbox option.';
+    passwordLabel.style.border = '1px solid var(--error-color)';
   } else {
     alert.textContent = "";
+    passwordLabel.style.border = '1px solid var(--card-stroke)';
     let pool = "";
 
     if (options.uppercase) pool += UPPERCASE;
@@ -156,3 +158,13 @@ radios.forEach(radio => {
     localStorage.setItem('theme', theme);
   });
 });
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  radios.forEach(radio => {
+    if(radio.value==savedTheme){
+      radio.checked = true;
+    }
+  })
+}

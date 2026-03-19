@@ -4,8 +4,14 @@
   --card-stroke:none;
   --primary-color:#1ED760;
   --alert-asterisk-color:#FF0000;
+  --error-color:#E50914;
   --main-text:#FFFFFF;
   --text:#8BC8A1;
   --button-text:#000000;
   --radio-text:#8BC8A1;
+  --checkbox-width:20px;
+  --checkbox-height:20px;
+  --hover-button-color:#3AF37D;
+  --icon: url("../assets/like-icon-like.svg");
+  --icon-checked: url("../assets/like-icon-liked.svg");
 }

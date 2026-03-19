@@ -4,9 +4,15 @@
   --card-stroke:#343439;
   --primary-color:#E50914;
   --second-color:#A41C22;
-  --alert-text-color:#EB3942;
+  --alert-asterisk-color:#EB3942;
   --main-text:#FFFFFF;
   --text:#CFCFCF;
   --button-text:#FFFFFF;
   --radio-text:#FFFFFF;
+  --error-color:#E50914;
+  --checkbox-width:20px;
+  --checkbox-height:20px;
+  --hover-button-color:#B11219;
+  --icon: url("../assets/red-icon-checkbox-unchecked.svg");
+  --icon-checked: url("../assets/red-icon-checkbox.svg");
 }
