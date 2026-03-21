@@ -50,65 +50,39 @@ function generatePassword(length, options) {
 }
 
 function calculateStrength(password, options) {
+  if(!password) return 0;
   let countStrength = 0;
-  if (password == "") {
-    countStrength = 0;
-    return countStrength;
-  }
-  //password length
-  if (password.length < 6) countStrength += 3;
-  if (password.length >= 6 && password.length < 9) countStrength += 5;
-  if (password.length >= 9 && password.length < 12) countStrength += 10;
-  if (password.length >= 12 && password.length < 17) countStrength += 17;
-  if (password.length >= 17) countStrength += 25;
 
-  //password char type
-  console.log(countStrength);
+  const length = password.length;
+  countStrength += Math.min(40, length * 4);
+
   let countTypes = 0;
   if (options.uppercase) countTypes++;
   if (options.lowercase) countTypes++;
   if (options.symbols) countTypes++;
   if (options.numbers) countTypes++;
+  countStrength += countTypes * 5;
+  
+  //penalities
+  if (length < 6) countStrength -= 40;
+  else if (length < 8) countStrength -= 20;
 
-  if (countTypes === 4) countStrength += 25;
-  if (countTypes === 3) countStrength += 15;
-  if (countTypes === 2) countStrength += 10;
-  if (countTypes === 1) countStrength += 5;
+  if (/^\d+$/.test(password)) countStrength -= 25;
+  if (/123|234|345|abc|bcd|cde/i.test(password)) score -= 20;
+  if (/(.)\1{2,}/.test(password)) score -= 20;
+  if (/^(.{1,3})\1+$/.test(password)) score -= 15;
 
-  //repeated char
-  console.log(countStrength);
-  let countRepeat = 1;
-  let bigger = 1;
-  for (let i = 1; i < password.length; i++) {
-    if (password[i] == password[i - 1]) countRepeat++;
-    else {
-      if (countRepeat > bigger) bigger = countRepeat;
-      countRepeat = 1;
-    }
-  }
-  if (bigger == 1) countStrength += 25;
-  if (bigger == 2) countStrength += 15;
-  if (bigger == 3) countStrength += 5;
-  if (bigger > 3) {
-    countStrength += 0;
-    alert.textContent = "lots of repeated characters";
-  }
-
-  //common words
-  console.log(countStrength);
-  let countCWord = 0;
   const lower = password.toLowerCase();
   for (let word of commonWords) {
     if (lower.includes(word)) {
-      countCWord++;
+      countStrength -= 30;
       break;
     }
   }
-  if (countCWord == 0) countStrength += 25;
 
-  //validate
-  console.log(countStrength);
-  if (countStrength > 100) countStrength = 100;
+  countStrength = Math.max(10, Math.min(100, countStrength));
+  const MAX_STRENGTH_OBSERVED = 60;
+  countStrength = (countStrength / MAX_STRENGTH_OBSERVED) * 100;
   return countStrength;
 }
 
