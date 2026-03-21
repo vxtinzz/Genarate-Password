@@ -36,5 +36,5 @@ Password strength is calculated based on:
 /^\d+$/           // only numbers
 /(.)\1{2,}/       // repeated characters
 /^(.{1,3})\1+$/   // repeated patterns
-
+```
  ![Author](https://img.shields.io/badge/author-vxtinzzz-black)
