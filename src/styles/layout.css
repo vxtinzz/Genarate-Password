@@ -105,8 +105,49 @@ border: 1px solid #ccc;
   margin-left: 17px;
 }
 
-#password-length{
+.slider-range {
+  -webkit-appearance: none;
   width: 100%;
+  height: 12px;
+  background: var(--card-fill);
+  border-radius: 15px;
+  outline: none;
+}
+
+
+.slider-range::-webkit-slider-runnable-track {
+  height: 18px;
+  background: var(--primary-color);
+  border: 3px solid var(--second-color);
+  border-radius: 15px;
+}
+
+.slider-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  background: var(--main-text);
+  border: 2px solid var(--main-text);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -10px;
+  margin-left: 3px;
+}
+
+.slider-range::-moz-range-track {
+  height: 18px;
+  background: var(--primary-color);
+  border-radius: 15px;
+}
+
+.slider-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--main-text);
+  border: 2px solid var(--main-text);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -6px;
 }
 
 .theme-selector{
