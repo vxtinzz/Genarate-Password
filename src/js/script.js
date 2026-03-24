@@ -68,9 +68,9 @@ function calculateStrength(password, options) {
   else if (length < 8) countStrength -= 20;
 
   if (/^\d+$/.test(password)) countStrength -= 25;
-  if (/123|234|345|abc|bcd|cde/i.test(password)) score -= 20;
-  if (/(.)\1{2,}/.test(password)) score -= 20;
-  if (/^(.{1,3})\1+$/.test(password)) score -= 15;
+  if (/123|234|345|abc|bcd|cde/i.test(password)) countStrength -= 20;
+  if (/(.)\1{2,}/.test(password)) countStrength -= 20;
+  if (/^(.{1,3})\1+$/.test(password)) countStrength -= 15;
 
   const lower = password.toLowerCase();
   for (let word of commonWords) {
@@ -86,6 +86,16 @@ function calculateStrength(password, options) {
   return countStrength;
 }
 
+function updateUI(strength){
+      strengthBar.style.width = strength + "%";
+    if (strength > 80) 
+      strengthBar.style.backgroundColor = "green";
+    else if (strength <= 80 && strength >= 40)
+      strengthBar.style.backgroundColor = "yellow";
+    else 
+      strengthBar.style.backgroundColor = "red";
+}
+
 document
   .getElementById("generate-button")
   .addEventListener("click", function () {
@@ -99,13 +109,7 @@ document
     let password = generatePassword(currentLength.innerHTML, options);
     passwordLabel.value = password;
     let strength = calculateStrength(password, options);
-    strengthBar.style.width = strength + "%";
-    if (strength > 80) 
-      strengthBar.style.backgroundColor = "green";
-    else if (strength <= 80 && strength >= 40)
-      strengthBar.style.backgroundColor = "yellow";
-    else 
-      strengthBar.style.backgroundColor = "red";
+    updateUI(strength);
   });
 
 copyButton.addEventListener("click", async () => {
@@ -142,3 +146,16 @@ if (savedTheme) {
     }
   })
 }
+
+passwordLabel.addEventListener("input", () => {
+  console.log("input");
+  const currentPassword = passwordLabel.value;
+  const options = {
+      uppercase: document.getElementById("checkbox-1").checked,
+      lowercase: document.getElementById("checkbox-2").checked,
+      numbers: document.getElementById("checkbox-3").checked,
+      symbols: document.getElementById("checkbox-4").checked,
+    };
+ let strength = calculateStrength(currentPassword,options);
+ updateUI(strength);
+});
