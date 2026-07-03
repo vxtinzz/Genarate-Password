@@ -93,6 +93,12 @@ border: 1px solid var(--unfocus-color);
    outline: none;
 }
 
+[data-theme="spotify"] .input-group input:focus, 
+[data-theme="netflix"] .input-group input:focus{
+   border: 1px solid var(--focus-color);
+   outline: none;
+}
+
 .slider-group{
   width: 70%;
   display: flex;

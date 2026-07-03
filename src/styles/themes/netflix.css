@@ -14,6 +14,7 @@
   --checkbox-height:20px;
   --hover-button-color:#B11219;
   --focus-color:#ccc;
+  --unfocus-color: rgba(0,0,0,0);
   --icon: url("../assets/red-icon-checkbox-unchecked.svg");
   --icon-checked: url("../assets/red-icon-checkbox.svg");
 }
