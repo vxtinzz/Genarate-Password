@@ -13,6 +13,7 @@
   --checkbox-width:20px;
   --checkbox-height:20px;
   --hover-button-color:#3AF37D;
+  --focus-color:#ccc;
   --icon: url("../assets/like-icon-like.svg");
   --icon-checked: url("../assets/like-icon-liked.svg");
 }

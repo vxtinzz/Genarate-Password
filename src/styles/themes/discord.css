@@ -14,6 +14,7 @@
   --checkbox-height:24px;
   --hover-button-color:#3E4BAA;
   --focus-color:#3E4BAA;
+  --unfocus-color:#ccc;
   --icon: url("../assets/toggle-button-unchecked.svg");
   --icon-checked: url("../assets/toggle-button.svg");
 }

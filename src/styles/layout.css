@@ -85,7 +85,7 @@ align-items: center;
 }
 
 .input-group input{
-border: 1px solid #ccc;
+border: 1px solid var(--unfocus-color);
 }
 
 .input-group input:focus{
