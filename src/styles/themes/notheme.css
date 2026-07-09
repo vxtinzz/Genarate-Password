@@ -1,0 +1,20 @@
+:root[data-theme="notheme"] {
+  --background-color:#ffffff;
+  --card-fill:#FFFFFF;
+  --card-stroke:#D9D9D9;
+  --primary-color:#47474d;
+  --second-color:#3D4059;
+  --alert-asterisk-color:#D46F6D;
+  --main-text:#000000;
+  --text:#B8B8B8;
+  --button-text:#FFFFFF;
+  --radio-text:#3D4059;
+  --error-color:#E50914;
+  --checkbox-width:48px;
+  --checkbox-height:24px;
+  --hover-button-color:#1e1e22;
+  --focus-color:#343439;
+  --unfocus-color:#ccc;
+  --icon: url("../assets/black-icon-checkbox-unchecked.svg");
+  --icon-checked: url("../assets/black-icon-checkbox.svg");
+}

@@ -137,7 +137,7 @@ radios.forEach(radio => {
   });
 });
 
-const savedTheme = localStorage.getItem('theme');
+const savedTheme = localStorage.getItem('theme') || "notheme";
 if (savedTheme) {
   document.documentElement.setAttribute('data-theme', savedTheme);
   radios.forEach(radio => {
@@ -145,7 +145,7 @@ if (savedTheme) {
       radio.checked = true;
     }
   })
-}
+} 
 
 passwordLabel.addEventListener("input", () => {
   console.log("input");
