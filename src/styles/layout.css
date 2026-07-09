@@ -8,7 +8,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
+  padding: 16px;
+  box-sizing: border-box;
   font-family: var(--montserrat);
 }
 
@@ -20,7 +23,12 @@ body {
 }
 
 .main-content{
+  width: 80%;
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -60,6 +68,7 @@ button:hover{
   width: 100%;
   border-radius: 6px;
   align-items: center;
+  box-sizing: border-box;
   padding: 12px;
   border: 1px var(--card-stroke) solid;
 }
@@ -67,21 +76,18 @@ button:hover{
 #copy-button {
   position: absolute;
   right: 8px;
-  top: 34%;
-  transform: translateY(-50%);
+  transform: translateY(25%);
   border-radius: 3px;
   line-height: 1.3;
   padding: 4px 11px;
 }
 
-.password-settings{
-  color: var(--main-text);
-}
-
 .input-group{
-position: relative;
-width: 1046px;
-align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 1128px;
+  box-sizing: border-box;
+  align-items: center;
 }
 
 .input-group input{
@@ -174,6 +180,7 @@ border: 1px solid var(--unfocus-color);
     border: 1px var(--card-stroke) solid;
     position: relative;
     width:100%;
+    box-sizing: border-box;
     border-radius: 5px;
     padding-right: 24px;
     margin-top: 8px;
@@ -189,13 +196,15 @@ border: 1px solid var(--unfocus-color);
 
 .password-settings {
   background-color: var(--card-fill);
+  color: var(--main-text);
   border: 1px var(--card-stroke) solid;
   display: flex;
   flex-direction: column;
   gap: 12px;
   justify-content: center;
   align-items: center;
-  width: 1070px; 
+  width: 100%;
+  max-width: 1128px; 
   height: 333px; 
   border-radius: 6px;
 }
@@ -250,4 +259,62 @@ border: 1px solid var(--unfocus-color);
 
 .asterisk {
   color: var(--alert-asterisk-color);
+}
+
+@media screen and (max-width: 678px){
+  .container {
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .main-content > * {
+    width: 100%;
+  }
+
+  .theme-selector{
+    position: static;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+    top: 0;
+    margin-top: 12px;
+  }
+
+  .checkbox-preferences {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+    column-gap: 0;
+  }
+
+  .checkbox-preferences label {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .password-settings {
+    height: auto;
+    padding: 16px 12px;
+  }
+
+  .slider-group{
+    width: 100%;
+  }
+
+  #generate-button {
+    width: 100%;
+  }
+
+  .slider-group{
+    transform: translateY(12px);
+  }
+}
+
+@media screen and (min-width:878px) and (max-width:996px){
+  .main-content > * {
+    width: 80%;
+  }
+  .theme-selector{
+    width: 80%;
+  }
 }
