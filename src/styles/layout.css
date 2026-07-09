@@ -261,6 +261,7 @@ border: 1px solid var(--unfocus-color);
   color: var(--alert-asterisk-color);
 }
 
+
 @media screen and (max-width: 678px){
   .container {
     width: 100%;
